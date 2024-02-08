@@ -26,9 +26,12 @@ let pipeY = 0;
 let topPipeImg;
 let bottomPipeImg;
 
+let nimb;
+let loseBird;
+
 let velocityX = -4.5;
 let velocityY = 0;
-let gravity = 0.4;
+let gravity = 0.2;
 
 let gameOver = false;
 let score = 0;
@@ -44,6 +47,12 @@ window.onload = function () {
     birdImg.onload = function () {
         context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
     }
+
+    loseBird = new Image();
+    loseBird.src = "./images/lose_bird.png";
+
+    nimb = new Image();
+    nimb.src = "./images/nimb.png"
 
     topPipeImg = new Image();
     topPipeImg.src = "./images/toppipe.png";
@@ -94,31 +103,33 @@ function update() {
 
     context.fillStyle = "white";
     if (score < 10) {
-        context.fillRect(0, 0, 60, 80);
+        context.fillRect(220, 30, 63, 80);
     }
     if (score >= 10 && score < 100) {
-        context.fillRect(0, 0, 105, 80);
+        context.fillRect(220, 30, 105, 80);
     }
     if (score >= 100) {
-        context.fillRect(0, 0, 147, 80);
+        context.fillRect(220, 30, 147, 80);
     }
 
     context.font = "70px sans-serif";
     context.fillStyle = "black";
-    context.fillText(score, 11, 66);
+    context.fillText(score, 233, 96);
     context.fillStyle = "violet";
-    context.fillText(score, 10, 65);
+    context.fillText(score, 232, 95);
 
 
     if (gameOver) {
+        context.drawImage(loseBird, bird.x - 10, bird.y - 10, bird.width + 29, bird.height + 27);
+        context.drawImage(nimb, bird.x - 4, bird.y - 20, 125, 50);
         context.fillStyle = "white";
-        context.fillRect(25, 445, 450, 170);
+        context.fillRect(25, 435, 450, 170);
         context.fillStyle = "black";
-        context.fillText("    БУСЬКА", 38, 521);
-        context.fillText("ПРОИГРАЛА", 38, 591);
+        context.fillText("    БУСЬКА", 38, 511);
+        context.fillText("ПРОИГРАЛА", 38, 581);
         context.fillStyle = "violet";
-        context.fillText("    БУСЬКА", 37, 520);
-        context.fillText("ПРОИГРАЛА", 37, 590);
+        context.fillText("    БУСЬКА", 37, 510);
+        context.fillText("ПРОИГРАЛА", 37, 580);
         boardHeight = 0;
         boardWidth = 0;
 
