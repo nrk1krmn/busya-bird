@@ -4,8 +4,8 @@ let boardWidth = 510;
 let boardHeight = 1100;
 let context;
 
-let birdWidth = 110;
-let birdHeight = 130;
+let birdWidth = 105;
+let birdHeight = 125;
 let birdX = boardWidth / 8;
 let birdY = boardHeight / 2.23;
 let birdImg;
@@ -29,9 +29,9 @@ let bottomPipeImg;
 let nimb;
 let loseBird;
 
-let velocityX = -3.7;
+let velocityX = -4;
 let velocityY = 0;
-let gravity = 0.15;
+let gravity = 0.33;
 
 let gameOver = false;
 let score = 0;
