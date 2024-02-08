@@ -29,9 +29,9 @@ let bottomPipeImg;
 let nimb;
 let loseBird;
 
-let velocityX = -4.5;
+let velocityX = -3.7;
 let velocityY = 0;
-let gravity = 0.2;
+let gravity = 0.15;
 
 let gameOver = false;
 let score = 0;
