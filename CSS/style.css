@@ -3,16 +3,5 @@ body {
     text-align: center;
     background-color: rgba(194, 159, 213, 255);
     background-image: url(../images/flappybirdbg3.png);
-}
-
-/* #board {
-    background-image: url(../images/flappybirdbg3.png);
-} */
-
-#game_over {
-    margin: auto;
-}
-
-#game_over_hidden {
-    bottom: 500;
+    overflow: hidden;
 }
