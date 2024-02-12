@@ -29,9 +29,9 @@ let bottomPipeImg;
 let nimb;
 let loseBird;
 
-let velocityX = -4;
+let velocityX = -5;
 let velocityY = 0;
-let gravity = 0.33;
+let gravity = 0.4;
 
 let gameOver = false;
 let score = 0;
@@ -61,7 +61,7 @@ window.onload = function () {
     bottomPipeImg.src = "./images/bottompipe.png";
 
     requestAnimationFrame(update);
-    setInterval(placePipes, 1500);
+    setInterval(placePipes, 1250);
     document.addEventListener("keydown", moveBird);
     document.addEventListener("touchstart", moveBird);
 }
