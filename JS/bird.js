@@ -1,4 +1,3 @@
-
 let board;
 let boardWidth = 510;
 let boardHeight = 1100;
@@ -28,6 +27,8 @@ let bottomPipeImg;
 
 let nimb;
 let loseBird;
+let loseText;
+
 
 let velocityX = -5;
 let velocityY = 0;
@@ -53,6 +54,9 @@ window.onload = function () {
 
     nimb = new Image();
     nimb.src = "./images/nimb.png"
+
+    loseText = new Image();
+    loseText.src = "./images/lose_img.png"
 
     topPipeImg = new Image();
     topPipeImg.src = "./images/toppipe.png";
@@ -122,17 +126,7 @@ function update() {
     if (gameOver) {
         context.drawImage(loseBird, bird.x - 10, bird.y - 10, bird.width + 29, bird.height + 27);
         context.drawImage(nimb, bird.x - 4, bird.y - 20, 125, 50);
-        context.fillStyle = "white";
-        context.fillRect(25, 435, 450, 170);
-        context.fillStyle = "black";
-        context.fillText("    БУСЬКА", 38, 511);
-        context.fillText("ПРОИГРАЛА", 38, 581);
-        context.fillStyle = "violet";
-        context.fillText("    БУСЬКА", 37, 510);
-        context.fillText("ПРОИГРАЛА", 37, 580);
-        boardHeight = 0;
-        boardWidth = 0;
-
+        context.drawImage(loseText, 10, 450, 500, 100);
     }
 }
 
