@@ -106,27 +106,36 @@ function update() {
     }
 
     context.fillStyle = "white";
+    context.font = "70px sans-serif";
     if (score < 10) {
-        context.fillRect(220, 30, 63, 80);
+        context.fillRect(212, 30, 63, 80);
+        context.fillStyle = "black";
+        context.fillText(score, 225, 96);
+        context.fillStyle = "violet";
+        context.fillText(score, 224, 95);
     }
     if (score >= 10 && score < 100) {
-        context.fillRect(220, 30, 105, 80);
+        context.fillRect(196, 30, 105, 80);
+        context.fillStyle = "black";
+        context.fillText(score, 211, 96);
+        context.fillStyle = "violet";
+        context.fillText(score, 210, 95);
     }
     if (score >= 100) {
-        context.fillRect(220, 30, 147, 80);
+        context.fillRect(188, 30, 147, 80);
+        context.fillStyle = "black";
+        context.fillText(score, 200, 96);
+        context.fillStyle = "violet";
+        context.fillText(score, 199, 95);
     }
 
-    context.font = "70px sans-serif";
-    context.fillStyle = "black";
-    context.fillText(score, 233, 96);
-    context.fillStyle = "violet";
-    context.fillText(score, 232, 95);
+
 
 
     if (gameOver) {
         context.drawImage(loseBird, bird.x - 10, bird.y - 10, bird.width + 29, bird.height + 27);
         context.drawImage(nimb, bird.x - 4, bird.y - 20, 125, 50);
-        context.drawImage(loseText, 10, 450, 500, 100);
+        context.drawImage(loseText, 2, 490, 500, 100);
     }
 }
 
